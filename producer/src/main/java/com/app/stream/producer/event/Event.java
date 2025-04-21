@@ -1,14 +1,13 @@
-package com.app.stream.producer.config;
+package com.app.stream.producer.event;
 
-import javax.lang.model.element.TypeElement;
 import java.util.Date;
 
 public class Event<K, T> {
 
     public enum Type {
         CREATED,
-        DELETE,
-        UPDATE
+        UPDATE,
+        DELETE;
     }
 
     private final Type typeEvent;
@@ -36,7 +35,6 @@ public class Event<K, T> {
     public T getData(){
         return data;
     }
-
     public Date getDate(){
         return date;
     }

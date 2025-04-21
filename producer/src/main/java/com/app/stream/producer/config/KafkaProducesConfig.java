@@ -1,6 +1,7 @@
 package com.app.stream.producer.config;
 
-import com.app.stream.producer.model.User;
+import com.app.stream.producer.event.Event;
+import com.app.stream.producer.model.Product;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,7 +19,7 @@ public class KafkaProducesConfig {
 
     private final String bootstrapAddress = "localhost:9092";
 
-    public ProducerFactory<String, Event<Integer, User>> producerFactory(){
+    public ProducerFactory<String, Event<Integer, Product>> producerFactory(){
         Map<String, Object> configProps = new HashMap<>();
         configProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapAddress);
         configProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
@@ -27,7 +28,7 @@ public class KafkaProducesConfig {
     }
 
     @Bean
-    public KafkaTemplate<String, Event<Integer, User>> kafkaTemplate(){
+    public KafkaTemplate<String, Event<Integer, Product>> kafkaTemplate(){
         return new KafkaTemplate<>(producerFactory());
     }
 }

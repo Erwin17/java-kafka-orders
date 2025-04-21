@@ -6,4 +6,4 @@ spring:
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       properties:
         spring.json.trusted.packages: "com.app.stream.producer.config"
-        spring.json.value.default.type: "com.app.stream.producer.config.Event"
+        spring.json.value.default.type: "com.app.stream.producer.event.Event"

@@ -1,4 +1,4 @@
-package com.app.stream.producer.config;
+package com.app.stream.producer.event;
 
 import java.util.Date;
 
@@ -38,5 +38,15 @@ public class Event<K, T> {
 
     public Date getDate(){
         return date;
+    }
+
+    @Override
+    public String toString() {
+        return "Event{" +
+                "typeEvent=" + typeEvent +
+                ", key=" + key +
+                ", data=" + data +
+                ", date=" + date +
+                '}';
     }
 }
