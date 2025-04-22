@@ -1,0 +1,8 @@
+Entrar al contenedor
+
+> docker exec -it <container-id> bash
+
+Creacion de Topic con las sigiuientes caracteristicas:
+
+
+> kafka-topics --bootstrap-server localhost:9092 --create --topic products
